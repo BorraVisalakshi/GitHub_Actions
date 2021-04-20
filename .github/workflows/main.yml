@@ -36,6 +36,8 @@ jobs:
         run: ls
       # Runs a set of commands to check the directory
       - name: Step-5 List the jar in target directory
-        run: 
-          cd target
-          ls -a
+        run: cd target
+      # Runs a set of commands to check the directory
+      - name: Step-5 List the jar in target directory
+        run: ls
+            
