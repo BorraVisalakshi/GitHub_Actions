@@ -34,9 +34,3 @@ jobs:
       # Runs a set of commands to check the directory
       - name: Step-4 List the current directory
         run: dir
-        
-     # Runs a set of commands to check the jar
-      - name: Step-5 check target folder
-        run: 
-          cd target
-          dir
