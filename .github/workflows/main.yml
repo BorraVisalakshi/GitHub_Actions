@@ -34,8 +34,11 @@ jobs:
       # Runs a set of commands to check the directory
       - name: Step-4 List the current directory
         run: ls
-      # Runs a set of commands to check the directory
+      # Runs a set of commands to check the target directory
       - name: Step-5 List the jar in target directory
         run: 
           cd target;
           ls -a
+      # Runs a set of commands to deploy to the Tomcat on EC2 Instance
+      - name: Step-6 Deploy to tomcat
+        run: curl -v -u tomcat:12345 -T /home/runner/work/GitHub_Actions/GitHub_Actions/target/SubmissionDataForm-0.0.1-SNAPSHOT.war 'http://ec2-18-218-175-87.us-east-2.compute.amazonaws.com:8080//manager/text/deploy?path=/SpringBoot_SubmissionForm'
