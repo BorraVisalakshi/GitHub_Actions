@@ -25,7 +25,12 @@ jobs:
         
     - name: Step:3 Build with Maven
       run: mvn -B package --file pom.xml
-     
+    #zip the file  
+    - name: Step-3 Zip the Code
+      uses: papeloto/action-zip@v1
+      with:
+          dest: result.zip
+          
     - name: Step:4 Check the Directory
       run: ls -a
       
