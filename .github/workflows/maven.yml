@@ -4,25 +4,23 @@
 name: Java CI with Maven
 
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
   
 jobs:
   build: 
-    name: Deploying war to Tomcat on EC2 Instance
+    name: Check
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Step:1 Checkout the code
       uses: actions/checkout@v2
-      
-    - uses: actions/cache@v1
+    
+    - run: mkdir -p path/to/artifact
+    
+    - uses: actions/upload-artifact@v2
       with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven-
-  #  - name: Step:6 Deploy to Tomcat
-   #   run: curl -u tomcat:12345 -T /home/runner/work/GitHub_Actions/GitHub_Actions/target/SubmissionDataForm-0.0.1-SNAPSHOT.war "http://ec2-13-58-76-208.us-east-2.compute.amazonaws.com:8080/manager/text/deploy?path=/WebApp"
-      
+        name: my-artifact
+        path: D:\Actions\world.txt
+
+   
