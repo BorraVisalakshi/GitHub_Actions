@@ -16,9 +16,9 @@ jobs:
     - name: Step:1 Checkout the code
       uses: actions/checkout@v2
     
-    - run: mkdir -p path/to/artifact
+    - run: mkdir -p D:\Actions\my_path
     
     - uses: actions/upload-artifact@v2
       with:
         name: my-artifact
-        path: D:\Actions\
+        path: D:\Actions\my_path
