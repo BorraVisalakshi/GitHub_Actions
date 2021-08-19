@@ -5,7 +5,11 @@ name: Java CI with Maven
 
 on:
   workflow_dispatch:
-  
+   inputs:
+      scan:
+       description: 'Send for scan'
+       required: true
+       default: ''
 jobs:
   build: 
     name: Check
@@ -21,3 +25,4 @@ jobs:
       with:
         workflow: sample
         token: ${{ secrets.PAT }}
+        inputs: '{ "hcl": "${{ github.event.inputs.scan }}" }'
