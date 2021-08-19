@@ -19,5 +19,5 @@ jobs:
     - name: Invoke workflow without inputs. Wait for result
       uses: jonas-schievink/workflow-proxy@v1
       with:
-        workflow: My Workflow
-        token: ${{ secrets.PERSONAL_TOKEN }}
+        workflow: sample
+        token: ${{ secrets.PAT }}
