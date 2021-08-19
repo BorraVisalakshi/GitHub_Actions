@@ -16,9 +16,8 @@ jobs:
     - name: Step:1 Checkout the code
       uses: actions/checkout@v2
     
-    - run: mkdir -p D:\Actions\my_path
-    
-    - uses: actions/upload-artifact@v2
+    - name: Invoke workflow without inputs. Wait for result
+      uses: jonas-schievink/workflow-proxy@v1
       with:
-        name: my-artifact
-        path: D:\Actions\my_path
+        workflow: My Workflow
+        token: ${{ secrets.PERSONAL_TOKEN }}
